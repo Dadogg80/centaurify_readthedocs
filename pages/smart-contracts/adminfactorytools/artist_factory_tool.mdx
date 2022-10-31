@@ -1,0 +1,80 @@
+import Callout from 'nextra-theme-docs/callout';
+
+<br />
+
+![Logo](https://www.centaurify.com/_next/image?url=%2Fimg%2Flogo%2Fcentaurify-logo.svg&w=1920&q=75)  
+
+<br />
+
+| Product              | Type               | Short description          |
+| :--------            | :----------------: | :------------------------- |
+| [Artist Factory Tool]()| Factory Smart Contract | *Used to deploy Artist Base Smart Contracts* |
+
+[![MIT License](https://img.shields.io/badge/License-MIT%20-green.svg)](https://opensource.org/licenses/)
+
+## 🎙 Description  
+
+<Callout>
+  **Artist Factory**  
+  .. is a factory contract used to deploy a new **ABSC** per **Artist** or **Band**.
+  - **ABSC** is *Artist_Base_Smart_Contract*.
+  - **Attention!** *Only one ABSC per artist/band*.
+  - Contract methods is restricted by **OPERATOR_ROLE**.
+</Callout>
+
+<br />  
+
+## Events
+
+### ABSC_Deployed
+
+*Event is emitted by the deployABSC method.*
+
+```solidity
+event ABSC_Deployed(
+    string ArtistName, 
+    bytes32 indexed ArtistId, 
+    address indexed ABSC_Addr, 
+    address indexed Factory, 
+    address Operator
+);
+```
+
+| Parameter| Type | Description |
+|:---|:---:|:---|
+| ArtistName  | string | The name or the artist/group. |
+| ArtistId `indexed` | bytes32 | Indexed - The artist identifier. |
+| ABSC_Addr `indexed` | address | Indexed - The deployed ABSC address |
+| Factory `indexed` | address | Indexed - The Factory address. |
+| Operator  | address | The privileged account.  |
+
+<br />
+
+## Methods  
+
+### `deployABSC`
+
+```solidity
+  function deployABSC(address _operator, string _artistName, uint256 _artistId, uint256 _salt) external nonpayable returns (address)
+```
+
+Restricted method used to deploy a new ABSC contract dedicated to a new LICENCED artist/band.
+
+| Parameters | Type | Description |
+|:---|:---:|:---|
+| _operator | address | The address of the OPERATOR_ROLE. |
+| _artistName | string | The artists name. |
+| _artistId | uint256 | The artist Identifier. |
+| _salt | uint256 | The salt used to create randomness in deployment. |
+ 
+| Returns | Type | Description |
+|:---|:---:|:---|
+| ABSC_Address | address | The address of the deployed ABSC |
+
+--- 
+
+<br />  
+
+### 🧑‍⚖️ Authors  
+
+- [@dadogg80](https://www.github.com/dadogg80)  
