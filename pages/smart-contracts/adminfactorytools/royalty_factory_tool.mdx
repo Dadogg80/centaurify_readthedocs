@@ -1,0 +1,71 @@
+import Callout from 'nextra-theme-docs/callout';
+
+<br />
+
+![Logo](https://www.centaurify.com/_next/image?url=%2Fimg%2Flogo%2Fcentaurify-logo.svg&w=1920&q=75)  
+
+<br />
+
+| Product              | Type               | Short description          |
+| :--------            | :----------------: | :------------------------- |
+| [Royalty Factory Tool]()| Factory Smart Contract | *Used to deploy Royalty Splitter Smart Contracts* |
+
+[![MIT License](https://img.shields.io/badge/License-MIT%20-green.svg)](https://opensource.org/licenses/)
+
+## 🎙 Description  
+
+> PaymentSplitterFactory.sol.
+
+<Callout>
+    PaymentSplitter Factory smart contract is used to deploy new payment splitter contracts.
+    *Contract methods is restricted by OPERATOR_ROLE.*
+</Callout>
+
+<br />  
+
+## Events  
+
+### `SplitterDeployed`
+
+```javascript
+    event Splitter_Deployed(bytes32 indexed ArtistId, address indexed RoyaltyAddr, address indexed Factory, address[] payees, uint256[] shares)
+```
+
+Event is emitted by the deploySplitter method.
+
+| Parameter | Type | Description |
+|:---|:---:|---:|
+| ArtistId `indexed` | bytes32 | Indexed - The artist identifier. |
+| RoyaltyAddr `indexed` | address | Indexed - The RoyaltySplitter address.  |
+| Factory `indexed` | address | Indexed - The Factory address. |
+| payees  | address[] | An array of accounts. |
+| shares  | uint256[] | An array of shares. |
+
+<br />  
+
+## methods  
+
+### `deploySplitter`
+
+```javascript
+    function deploySplitter(bytes32 _artistId, uint256 _salt, address[] _payees, uint256[] _shares) external nonpayable returns (address)
+```
+
+Restricted method used to deploy a new PaymentSplitter contract dedicated to an artist/band.
+
+*Restricted with OPERATOR_ROLE.Will emit the event { Splitter_Deployed }.*
+
+| Parameters | Type | Description |
+|:---|:---:|---:|
+| _artistId | bytes32 | The artist Identifier. |
+| _salt | uint256 | The salt used in the deployment. |
+| _payees | address[] | An array of accounts. |
+| _shares | uint256[] | An array of shares. |
+
+
+| Returns| Type | Description |
+|:---|:---:|---:|
+| _0 | address | undefined |
+
+<br />  
+

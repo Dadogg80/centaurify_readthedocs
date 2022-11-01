@@ -19,7 +19,7 @@ import Callout from 'nextra-theme-docs/callout';
   .. is a factory contract used to deploy a new **ABSC** per **Artist** or **Band**.
   - **ABSC** is *Artist_Base_Smart_Contract*.
   - **Attention!** *Only one ABSC per artist/band*.
-  - Contract methods is restricted by **OPERATOR_ROLE**.
+- Contract methods is restricted by **OPERATOR_ROLE**.
 </Callout>
 
 <br />  
@@ -30,7 +30,7 @@ import Callout from 'nextra-theme-docs/callout';
 
 *Event is emitted by the deployABSC method.*
 
-```solidity
+```javascript
 event ABSC_Deployed(
     string ArtistName, 
     bytes32 indexed ArtistId, 
@@ -54,7 +54,7 @@ event ABSC_Deployed(
 
 ### `deployABSC`
 
-```solidity
+```javascript
   function deployABSC(address _operator, string _artistName, uint256 _artistId, uint256 _salt) external nonpayable returns (address)
 ```
 

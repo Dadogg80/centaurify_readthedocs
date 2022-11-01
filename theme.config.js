@@ -1,4 +1,5 @@
 import React from "react";
+import Script from 'next/script'
 
 export default {
   github: 'https://github.com/Centaurifly/ethereum_repository/',
@@ -13,7 +14,7 @@ export default {
       </React.Fragment>
   ),
   script: (
-    <React.Fragment>
+    <Script>
       <meta name="msapplication-TileColor" content="#ffffff" />
       <meta name="theme-color" content="#ffffff" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,37 +24,8 @@ export default {
       <meta name="og:title" content="Centaurify: Read The Docs" />
       <meta name="og:image" content="" />
       <meta name="apple-mobile-web-app-title" content="./public/cenaturify.ico" />
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="/apple-icon-180x180.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="192x192"
-        href="/android-icon-192x192.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="96x96"
-        href="/favicon-96x96.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="/favicon-16x16.png"
-      />
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-      </ React.Fragment>
+    </Script>
   ),
   search: true,
   prevLinks: true,
